@@ -1,11 +1,11 @@
 Çoklu Lojistik Regresyon ile Havayolu Müşteri Memnuniyeti Analizi
 ================
-Edanur Yılmaz ,
+Edanur Yılmaz,
 2024-01-18
 
+## İçerik
 - [Verinin İncelenmesi ve
   Hazırlanması](#verinin-i̇ncelenmesi-ve-hazırlanması)
-- [Veriyi Tanıma](#veriyi-tanıma)
 - [Modeli Oluşturma ve Yorumlama](#modeli-oluşturma-ve-yorumlama)
 - [Model Üzerinden Tahmin](#model-üzerinden-tahmin)
 - [Optimal Eşik Değeri](#optimal-eşik-değeri)
@@ -32,8 +32,9 @@ library(pROC)
 ```
 
 ## Verinin İncelenmesi ve Hazırlanması
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
-## Veriyi Tanıma
+**Veriyi Tanıma**
 
 Kaynak veri seti: [Airlines Customer
 satisfaction](https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction/data)
@@ -152,6 +153,7 @@ sat_status(variables)
     ##   satisfied        0  2582  5695  7978 28574 26053
 
 ## Modeli Oluşturma ve Yorumlama
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
 ***satisfaction*** değişkeninin aldığı “satisfied”(memnun) ve
 “dissatisfied”(memnun değil) değerlerinin miktarlarını inceliyoruz.
@@ -383,6 +385,7 @@ Bağımsız değişkenlerin katsayı değerlerini görüyoruz. Bu değerleri
 bağımlı değişken üzerindeki etkilerini yorumlamada kullanabiliriz.
 
 ## Model Üzerinden Tahmin
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
 Anlamlılığı düşük olduğu için ve önem seviyesi yüksek olmadığı için
 ***Departure.Delay.in.Minutes*** değişkenini çıkarıyorum.
@@ -459,6 +462,7 @@ errorRate
 Hata Oranı yaklaşık %16’dır.
 
 ## Optimal Eşik Değeri
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
 Tahminler yapılırken en iyi sonucu veren eşik değeri belirlemek için
 tahmin özetimizi inceliyoruz.
@@ -587,6 +591,7 @@ memnuniyeti en çok arttırdığını bulup onlara yoğunlaşmak mı? Elimizdeki
 sonuçlar verebilir.
 
 ## Precision ve Recall
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
 Kesinlik değeridir. Bir veri setinde ilgilendiğimiz sınıfın aslında ne
 kadar doğru sınıflandırıldığını bulmak için kullanılır. İlgilendiğimiz
@@ -694,6 +699,7 @@ f1_score1
     ## [1] 0.897173
 
 ## F1 Score
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
 ``` r
 f1_score<-2*((precision*recall1)/(precision+recall1))
@@ -707,6 +713,7 @@ elde edilmistir.(cut_off=0.389) Modelin placed olanları tahmin etme F1
 scoru %85 olarak elde edilmistir.(cut_off=0.5)
 
 ## ROC Curve ve AUC (Area Under Curve)
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
     ## Setting levels: control = dissatisfied, case = satisfied
 
@@ -729,6 +736,7 @@ Modelin altında kalan alan 0.91’dir. Bu değer 1’e yaklaştıkça tahmin
 performansı artar. Modelin tahmin performansı gayet iyidir.
 
 ## caret Paketi ile Performans Yorumlama
+<sup>[İçeriğe dön.](#İçerik)</sup>
 
 ``` r
 testset$satisfaction <- factor(testset$satisfaction)
