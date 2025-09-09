@@ -163,7 +163,7 @@ dataSatisfied<-Airlines_Data %>% filter(satisfaction == "satisfied")
 dataDissatisfied<-Airlines_Data %>% filter(satisfaction == "dissatisfied")
 ```
 
-![](Çoklu-Lojistik-Regresyon-ile-Havayolu-Müşteri-Memnuniyeti-Analizi_files/figure-gfm/datasatisfactionplot-1.png)<!-- -->
+![1](https://github.com/Edanur-Y/Airline-Customer-Satisfaction-Prediction-with-Multiple-Logistic-Regression/blob/main/figure-gfm/datasatisfactionplot-1.png)
 ***satisfaction*** değişkeninin “satisfied” değerini “dissatisfied”
 değerinden daha fazla aldığını görebiliyoruz. Her bir alt kategornin
 yaklaşık oranlarda sisteme dahil olabilmesi adına bu değerlerin
@@ -186,7 +186,7 @@ trainDissatisfied<-dataDissatisfied[dataDissatisfieddIndex,]
 trainset<-rbind(trainSatisfied, trainDissatisfied)
 ```
 
-![](Çoklu-Lojistik-Regresyon-ile-Havayolu-Müşteri-Memnuniyeti-Analizi_files/figure-gfm/trainsatisfactionplot-1.png)<!-- -->
+![2](https://github.com/Edanur-Y/Airline-Customer-Satisfaction-Prediction-with-Multiple-Logistic-Regression/blob/main/figure-gfm/trainsatisfactionplot-1.png)
 Geriye kalan verilerle de test setini oluşturuyoruz.
 
 ``` r
@@ -526,7 +526,7 @@ ROCR_pred_test <- prediction(predict1, testset$satisfaction)
 ROCR_perf_test <- performance(ROCR_pred_test,'tpr','fpr')
 ```
 
-![](Çoklu-Lojistik-Regresyon-ile-Havayolu-Müşteri-Memnuniyeti-Analizi_files/figure-gfm/ROCR_perf_test_plot-1.png)<!-- -->
+![3](https://github.com/Edanur-Y/Airline-Customer-Satisfaction-Prediction-with-Multiple-Logistic-Regression/blob/main/figure-gfm/ROCR_perf_test_plot-1.png)
 
 ``` r
 cost_perf = performance(ROCR_pred_test, "cost")
@@ -719,7 +719,7 @@ scoru %85 olarak elde edilmistir.(cut_off=0.5)
 
     ## Setting direction: controls < cases
 
-![](Çoklu-Lojistik-Regresyon-ile-Havayolu-Müşteri-Memnuniyeti-Analizi_files/figure-gfm/rocmodel_plot-1.png)<!-- -->
+![4](https://github.com/Edanur-Y/Airline-Customer-Satisfaction-Prediction-with-Multiple-Logistic-Regression/blob/main/figure-gfm/rocmodel_plot-1.png)<!-- -->
 
 ``` r
 rocModel
@@ -982,3 +982,4 @@ değeri iyidir.
 yoktur. Müşteri memnuniyeti presicionın öneminin yüksek olduğu bir durum
 değildir. Genel anlamda daha olumlu değerlere sahip olduğu için cut_off
 = 0.398 seçilebilir.
+
